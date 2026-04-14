@@ -3,9 +3,9 @@
 import { useScrollAnimation } from "@/components/useScrollAnimation";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
+import AboutUs from "@/components/AboutUs";
 import Features from "@/components/Features";
 import HowItWorks from "@/components/HowItWorks";
-import UseCases from "@/components/UseCases";
 import Pricing from "@/components/Pricing";
 import FAQ from "@/components/FAQ";
 import CTASection from "@/components/CTASection";
@@ -19,9 +19,9 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
+        <AboutUs />
         <Features />
         <HowItWorks />
-        <UseCases />
         <Pricing />
         <FAQ />
         <CTASection />

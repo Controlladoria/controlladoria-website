@@ -123,6 +123,15 @@ export default function HowItWorks() {
           </p>
         </div>
 
+        {/* How it works intro */}
+        <div className="animate-on-scroll text-center mb-16 max-w-2xl mx-auto">
+          <div className="space-y-3 text-muted-foreground">
+            <p>Você envia os documentos do seu negócio.</p>
+            <p>A IA processa, interpreta e organiza as informações.</p>
+            <p>Você recebe uma leitura estruturada que ajuda a enxergar o que está acontecendo com mais clareza.</p>
+          </div>
+        </div>
+
         {/* Steps */}
         <div className="space-y-24 lg:space-y-32">
           {STEPS.map((step, i) => (
@@ -149,6 +158,34 @@ export default function HowItWorks() {
               <div className="flex-1 w-full max-w-md">{step.visual}</div>
             </div>
           ))}
+        </div>
+
+        {/* Benefits + CTA */}
+        <div className="animate-on-scroll mt-24 text-center max-w-2xl mx-auto">
+          <h3 className="text-xl font-bold mb-6">Com a ControlladorIA, você tende a ganhar:</h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-left mb-10">
+            {[
+              "Mais clareza para decidir",
+              "Mais segurança na leitura dos números",
+              "Mais organização na rotina de controladoria",
+              "Mais previsibilidade para planejar",
+              "Menos dependência de improviso",
+              "Mais foco no que realmente importa",
+            ].map((item) => (
+              <div key={item} className="flex items-center gap-2 text-muted-foreground">
+                <svg className="w-4 h-4 text-primary shrink-0" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                </svg>
+                {item}
+              </div>
+            ))}
+          </div>
+          <a
+            href="#planos"
+            className="btn-press inline-flex items-center justify-center px-8 py-4 rounded-xl bg-primary text-primary-foreground font-semibold text-base hover:bg-primary-light transition-colors"
+          >
+            Experimentar Grátis
+          </a>
         </div>
       </div>
     </section>

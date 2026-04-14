@@ -1,15 +1,3 @@
-"use client";
-
-import { useState, useEffect } from "react";
-
-const TYPING_WORDS = [
-  "DRE Gerencial",
-  "Balanço Patrimonial",
-  "Fluxo de Caixa",
-  "Relatórios com IA",
-  "Análise Financeira",
-];
-
 const STATS = [
   { value: "10x", label: "Mais rápido" },
   { value: "99%", label: "Precisão" },
@@ -17,33 +5,6 @@ const STATS = [
 ];
 
 export default function Hero() {
-  const [wordIndex, setWordIndex] = useState(0);
-  const [charIndex, setCharIndex] = useState(0);
-  const [deleting, setDeleting] = useState(false);
-
-  useEffect(() => {
-    const word = TYPING_WORDS[wordIndex];
-    const timeout = deleting ? 40 : 80;
-
-    if (!deleting && charIndex === word.length) {
-      setTimeout(() => setDeleting(true), 2000);
-      return;
-    }
-
-    if (deleting && charIndex === 0) {
-      setDeleting(false);
-      setWordIndex((i) => (i + 1) % TYPING_WORDS.length);
-      return;
-    }
-
-    const timer = setTimeout(() => {
-      setCharIndex((c) => c + (deleting ? -1 : 1));
-    }, timeout);
-
-    return () => clearTimeout(timer);
-  }, [charIndex, deleting, wordIndex]);
-
-  const displayText = TYPING_WORDS[wordIndex].slice(0, charIndex);
 
   return (
     <section className="relative pt-32 lg:pt-40 pb-20 lg:pb-32 overflow-clip">
@@ -55,19 +16,17 @@ export default function Hero() {
         <div className="text-center max-w-4xl mx-auto">
           {/* Headline */}
           <h1 className="animate-on-scroll text-4xl sm:text-5xl lg:text-7xl font-bold tracking-tight leading-[1.1] mb-6">
-            Seus relatórios financeiros
+            Decisões Inteligentes.
             <br />
             <span className="gradient-text">
-              {displayText}
-              <span className="animate-blink text-primary">|</span>
+              Crescimento Real.
             </span>
           </h1>
 
           {/* Subtitle */}
           <p className="animate-on-scroll stagger-1 text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed">
-            Automatize a geração de DRE, Balanço Patrimonial e Fluxo de Caixa
-            com inteligência artificial. Envie seus documentos e receba
-            relatórios prontos em minutos.
+            Automatize sua controladoria com inteligência artificial.
+            Envie seus documentos e receba relatórios prontos em minutos.
           </p>
 
           {/* CTAs */}

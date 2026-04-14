@@ -6,22 +6,18 @@ const FOOTER_LINKS = {
   Produto: [
     { label: "Recursos", href: "#recursos" },
     { label: "Como Funciona", href: "#como-funciona" },
-    { label: "Casos de Uso", href: "#casos-de-uso" },
     { label: "Planos", href: "#planos" },
-    { label: "FAQ", href: "#faq" },
+    { label: "Dúvidas", href: "#faq" },
   ],
   Empresa: [
-    { label: "Sobre Nós", href: "#" },
-    { label: "Contato", href: "#" },
-    { label: "Termos de Uso", href: "#" },
-    { label: "Política de Privacidade", href: "#" },
-    { label: "LGPD", href: "#" },
+    { label: "Sobre Nós", href: "#sobre-nos" },
+    { label: "Contato", href: "/contato" },
+    { label: "Termos de Uso", href: "/terms" },
+    { label: "Política de Privacidade", href: "/privacy" },
   ],
   "Comece Agora": [
-    { label: "Criar Conta Grátis", href: "#" },
-    { label: "Login", href: "#" },
-    { label: "Documentação API", href: "#" },
-    { label: "Status", href: "#" },
+    { label: "Criar Conta Grátis", href: "#planos" },
+    { label: "Login", href: "https://app.controlladoria.com.br/login" },
   ],
 };
 

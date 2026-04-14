@@ -8,60 +8,50 @@ const CHECK = (
 
 const PLANS = [
   {
-    name: "Starter",
+    name: "Visão",
+    subtitle: "Para começar a enxergar seu negócio com clareza.",
+    originalPrice: 149,
     price: 99,
-    perUser: 99,
     users: "1 usuário",
+    saving: 50,
     highlighted: false,
     cta: "Começar Grátis",
     features: [
-      "1 usuário",
-      "Upload ilimitado de documentos",
-      "Processamento com IA avançada",
+      "Upload ilimitado de imagens, PDFs e XMLs",
+      "IA avançada para extração de dados",
       "DRE, Balanço e Fluxo de Caixa",
-      "Relatórios e análises detalhadas",
-      "Fluxo de Caixa Básico",
       "Suporte por e-mail",
     ],
   },
   {
-    name: "Equipe",
+    name: "Direção",
+    subtitle: "Para crescer com direção estratégica segura.",
+    originalPrice: 499,
     price: 399,
-    perUser: 80,
     users: "Até 5 usuários",
+    saving: 100,
     highlighted: true,
     badge: "Mais Popular",
     cta: "Começar Grátis",
-    discount: 20,
     features: [
-      "Até 5 usuários",
-      "Upload ilimitado de documentos",
-      "Processamento com IA avançada",
-      "DRE, Balanço e Fluxo de Caixa",
-      "Relatórios e análises detalhadas",
-      "Fluxo de Caixa — Direto e Indireto",
+      "Tudo do Visão +",
       "Gestão de equipe e permissões",
-      "Integração via API",
       "Suporte prioritário",
     ],
   },
   {
-    name: "Enterprise",
+    name: "Expansão",
+    subtitle: "Para empresas que crescem sem limites.",
+    originalPrice: null,
     price: null,
-    perUser: null,
     users: "Usuários ilimitados",
+    saving: null,
     highlighted: false,
     cta: "Falar com Vendas",
     features: [
-      "Usuários ilimitados",
-      "Upload ilimitado de documentos",
-      "Processamento com IA avançada",
-      "DRE, Balanço e Fluxo de Caixa",
-      "Relatórios e análises detalhadas",
-      "Fluxo de Caixa — Direto e Indireto",
-      "Gestão de equipe e permissões",
-      "Integração via API",
-      "Suporte dedicado + SLA",
+      "Tudo do Direção +",
+      "Suporte dedicado",
+      "SLA garantido",
       "Onboarding personalizado",
     ],
   },
@@ -76,11 +66,11 @@ export default function Pricing() {
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="animate-on-scroll text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
-            Planos <span className="gradient-text">simples e transparentes</span>
+            Comece agora e conheça a{" "}
+            <span className="gradient-text">ControlladorIA na prática</span>
           </h2>
           <p className="animate-on-scroll stagger-1 text-lg text-muted-foreground max-w-2xl mx-auto">
-            Comece com 15 dias grátis. Sem cartão de crédito. Cancele quando
-            quiser.
+            Se você quer tomar decisões com mais clareza, o próximo passo é simples:
           </p>
         </div>
 
@@ -105,44 +95,39 @@ export default function Pricing() {
               {/* Plan name */}
               <div className="mb-6">
                 <h3 className="text-xl font-bold mb-1">{plan.name}</h3>
-                <p className="text-sm text-muted-foreground">{plan.users}</p>
+                <p className="text-sm text-muted-foreground">{plan.subtitle}</p>
               </div>
 
               {/* Price */}
               <div className="mb-6">
                 {plan.price !== null ? (
                   <>
-                    <div className="flex items-baseline gap-1">
-                      <span className="text-sm text-muted-foreground">R$</span>
-                      <span className="text-5xl font-bold">{plan.perUser}</span>
-                    </div>
-                    <p className="text-sm text-muted-foreground mt-1">
-                      por usuário / mês
-                    </p>
-                    {plan.discount && (
-                      <div className="mt-2 inline-flex items-center gap-2 px-3 py-1 bg-green-400/10 rounded-lg">
-                        <span className="text-sm text-muted-foreground line-through">
-                          R$ {plan.perUser === 80 ? 495 : plan.price}
-                        </span>
-                        <span className="text-sm font-medium text-green-400">
-                          R$ {plan.price}/mês total
-                        </span>
-                        <span className="text-xs font-bold text-green-400 bg-green-400/10 px-1.5 py-0.5 rounded">
-                          -{plan.discount}%
-                        </span>
+                    {plan.originalPrice && (
+                      <div className="text-sm text-muted-foreground line-through mb-1">
+                        R$ {plan.originalPrice},00
                       </div>
                     )}
-                    {!plan.discount && (
-                      <p className="text-sm text-muted-foreground mt-1">
-                        R$ {plan.price}/mês total
-                      </p>
+                    <div className="flex items-baseline gap-1">
+                      <span className="text-sm text-muted-foreground">R$</span>
+                      <span className="text-5xl font-bold">{plan.price}</span>
+                      <span className="text-sm text-muted-foreground">/mês</span>
+                    </div>
+                    <p className="text-sm text-muted-foreground mt-1">
+                      {plan.users}
+                    </p>
+                    {plan.saving && (
+                      <div className="mt-2 inline-flex items-center px-3 py-1 bg-green-400/10 rounded-lg">
+                        <span className="text-sm font-medium text-green-400">
+                          Economize R$ {plan.saving},00
+                        </span>
+                      </div>
                     )}
                   </>
                 ) : (
                   <>
                     <div className="text-4xl font-bold">Sob consulta</div>
                     <p className="text-sm text-muted-foreground mt-1">
-                      Preço personalizado
+                      {plan.users}
                     </p>
                   </>
                 )}
@@ -184,6 +169,9 @@ export default function Pricing() {
           <p className="text-sm text-muted-foreground">
             Pagamento 100% seguro e criptografado.
             Aceitamos cartão, PIX e boleto.
+          </p>
+          <p className="text-base text-muted-foreground mt-6 max-w-2xl mx-auto">
+            Entre, explore a proposta e veja como a sua rotina de controladoria pode ganhar mais estrutura, mais inteligência e mais direção.
           </p>
         </div>
       </div>

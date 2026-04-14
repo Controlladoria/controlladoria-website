@@ -4,11 +4,11 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 
 const NAV_LINKS = [
+  { label: "Sobre Nós", href: "#sobre-nos" },
   { label: "Recursos", href: "#recursos" },
   { label: "Como Funciona", href: "#como-funciona" },
-  { label: "Casos de Uso", href: "#casos-de-uso" },
   { label: "Planos", href: "#planos" },
-  { label: "FAQ", href: "#faq" },
+  { label: "Dúvidas", href: "#faq" },
 ];
 
 export default function Navbar() {
@@ -58,7 +58,7 @@ export default function Navbar() {
               href="#planos"
               className="btn-press inline-flex items-center px-5 py-2.5 rounded-lg bg-primary text-primary-foreground text-sm font-medium hover:bg-primary-light transition-colors"
             >
-              Começar Grátis
+              Teste Grátis
             </a>
           </div>
 
@@ -113,7 +113,7 @@ export default function Navbar() {
               onClick={() => setMobileOpen(false)}
               className="btn-press block text-center px-5 py-2.5 rounded-lg bg-primary text-primary-foreground text-sm font-medium hover:bg-primary-light transition-colors"
             >
-              Começar Grátis
+              Teste Grátis
             </a>
           </div>
         </div>

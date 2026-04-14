@@ -35,7 +35,7 @@ const FEATURES = [
       </svg>
     ),
     title: "Fluxo de Caixa",
-    description: "Fluxo de caixa direto e indireto gerado automaticamente, com categorização inteligente das movimentações.",
+    description: "Fluxo de caixa detalhado com entradas, saídas e saldo por período, gerado automaticamente.",
   },
   {
     icon: (
@@ -64,12 +64,10 @@ export default function Features() {
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="animate-on-scroll text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
-            Tudo que você precisa para sua{" "}
-            <span className="gradient-text">controladoria</span>
+            Seus <span className="gradient-text">relatórios financeiros</span>
           </h2>
           <p className="animate-on-scroll stagger-1 text-lg text-muted-foreground max-w-2xl mx-auto">
-            Da extração de documentos à geração de relatórios gerenciais
-            completos, automatizados com inteligência artificial.
+            Tudo que você precisa para sua controladoria
           </p>
         </div>
 

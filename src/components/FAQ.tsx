@@ -4,36 +4,32 @@ import { useState } from "react";
 
 const QUESTIONS = [
   {
+    q: "Isso é para quem?",
+    a: "Para qualquer negócio que sinta que seus números não estão falando o que realmente importa. Pode ser você começando a organizar finanças, uma empresa em crescimento que precisa de decisões mais rápidas, ou um contador que quer entregar mais valor aos clientes. O ponto em comum: clareza financeira como base para crescimento.",
+  },
+  {
+    q: "Preciso entender muito de finanças para usar?",
+    a: "Não. Mas aqui está o ponto: se você entende finanças, vai usar a ControlladorIA para ir mais fundo e mais rápido. Se não entende, vai finalmente entender. A ferramenta traduz números em linguagem que faz sentido para quem precisa decidir.",
+  },
+  {
+    q: "A solução substitui o olhar estratégico humano?",
+    a: "Não. Ela faz o oposto: libera seu tempo de tarefas operacionais para você focar em decisões estratégicas. A IA organiza os dados; você interpreta o significado. Quanto melhor sua liderança, melhor você usa a ControlladorIA.",
+  },
+  {
+    q: "O que eu ganho com isso, na prática?",
+    a: "Depende de onde você está. Se está começando: finalmente sabe onde está seu dinheiro. Se está crescendo: toma decisões 10x mais rápido. Se é contador: entrega relatórios que seus clientes realmente entendem e usam. O ganho comum: você para de adivinhar e começa a escolher.",
+  },
+  {
+    q: "E se eu ainda estiver em dúvida?",
+    a: "Teste grátis por 15 dias. A melhor forma de resolver dúvida é ver funcionando. Se depois de testar ainda tiver perguntas, aí sim a gente conversa com mais contexto.",
+  },
+  {
+    q: "Por que essa solução é diferente?",
+    a: "Porque não é só software. É uma forma diferente de pensar controladoria: não como obrigação fiscal, mas como bússola estratégica. Enquanto outros vendem relatórios, a gente vende direção. E isso muda tudo.",
+  },
+  {
     q: "Como funciona o teste grátis de 15 dias?",
-    a: "Você tem acesso completo a todas as funcionalidades por 15 dias, sem precisar informar cartão de crédito. Após o período de teste, você escolhe o plano que melhor se encaixa e a assinatura é renovada automaticamente. Pode cancelar a qualquer momento durante o teste sem ser cobrado.",
-  },
-  {
-    q: "Quais tipos de documentos são aceitos?",
-    a: "Aceitamos PDF, imagens (JPG, PNG), planilhas Excel, e XMLs de notas fiscais (NF-e, NFS-e). Isso inclui notas fiscais, boletos, recibos, comprovantes de pagamento e extratos bancários.",
-  },
-  {
-    q: "A IA é realmente precisa nos relatórios?",
-    a: "Sim. Nossa tecnologia de IA possui taxa de precisão superior a 99% na extração de dados. Todos os relatórios passam por validação automática e você pode revisar e ajustar qualquer valor antes de finalizar.",
-  },
-  {
-    q: "Posso cancelar minha assinatura a qualquer momento?",
-    a: "Sim! Não há fidelidade mínima, multas ou taxas de cancelamento. Você pode cancelar diretamente pelo painel de gerenciamento da sua conta a qualquer momento.",
-  },
-  {
-    q: "Quais formas de pagamento são aceitas?",
-    a: "Aceitamos todas as principais formas de pagamento: cartões de crédito (Visa, Mastercard, Amex), cartões de débito, PIX e boleto bancário.",
-  },
-  {
-    q: "Existe limite de documentos para upload?",
-    a: "Não! Você pode fazer upload ilimitado de documentos em qualquer plano. Processamos todos os seus documentos sem restrições de volume.",
-  },
-  {
-    q: "Meus dados estão seguros?",
-    a: "Absolutamente. Utilizamos criptografia de ponta a ponta, servidores seguros com certificação SOC2, e seguimos todas as práticas de segurança recomendadas pela LGPD. Seus dados financeiros nunca são compartilhados com terceiros.",
-  },
-  {
-    q: "É possível integrar com meu sistema atual?",
-    a: "Sim, nos planos Equipe e Enterprise oferecemos integração via API RESTful completa. Você pode conectar a ControlladorIA ao seu ERP, sistema contábil ou qualquer outra ferramenta que sua empresa utilize.",
+    a: "Você tem acesso completo a todas as funcionalidades. Pode fazer upload, gerar relatórios, testar com seus dados reais. Sem surpresas no final: se não quiser continuar, cancela direto no painel. Nenhuma ligação, nenhuma pergunta.",
   },
 ];
 
@@ -46,7 +42,7 @@ export default function FAQ() {
         {/* Header */}
         <div className="text-center mb-12">
           <h2 className="animate-on-scroll text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
-            Perguntas <span className="gradient-text">frequentes</span>
+            Tá com dúvida? <span className="gradient-text">A gente explica.</span>
           </h2>
           <p className="animate-on-scroll stagger-1 text-lg text-muted-foreground">
             Tire suas dúvidas sobre a ControlladorIA.

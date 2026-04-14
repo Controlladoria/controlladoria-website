@@ -182,8 +182,7 @@ export default function Pricing() {
         {/* Trust line */}
         <div className="text-center mt-12">
           <p className="text-sm text-muted-foreground">
-            Pagamento seguro processado por{" "}
-            <span className="font-semibold text-foreground">Stripe</span>.
+            Pagamento 100% seguro e criptografado.
             Aceitamos cartão, PIX e boleto.
           </p>
         </div>

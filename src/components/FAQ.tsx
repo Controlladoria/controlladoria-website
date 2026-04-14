@@ -13,7 +13,7 @@ const QUESTIONS = [
   },
   {
     q: "A IA é realmente precisa nos relatórios?",
-    a: "Sim. Utilizamos modelos de IA avançados (GPT-4o e Claude) com taxa de precisão superior a 99% na extração de dados. Todos os relatórios passam por validação automática e você pode revisar e ajustar qualquer valor antes de finalizar.",
+    a: "Sim. Nossa tecnologia de IA possui taxa de precisão superior a 99% na extração de dados. Todos os relatórios passam por validação automática e você pode revisar e ajustar qualquer valor antes de finalizar.",
   },
   {
     q: "Posso cancelar minha assinatura a qualquer momento?",
@@ -21,7 +21,7 @@ const QUESTIONS = [
   },
   {
     q: "Quais formas de pagamento são aceitas?",
-    a: "Aceitamos todas as principais formas de pagamento através do Stripe: cartões de crédito (Visa, Mastercard, Amex), cartões de débito, PIX e boleto bancário.",
+    a: "Aceitamos todas as principais formas de pagamento: cartões de crédito (Visa, Mastercard, Amex), cartões de débito, PIX e boleto bancário.",
   },
   {
     q: "Existe limite de documentos para upload?",

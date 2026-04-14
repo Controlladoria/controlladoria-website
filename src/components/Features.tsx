@@ -44,7 +44,7 @@ const FEATURES = [
       </svg>
     ),
     title: "IA Avançada",
-    description: "Powered by GPT-4o e Claude. Reconhecimento de notas fiscais, boletos, recibos e extratos bancários.",
+    description: "Reconhecimento inteligente de notas fiscais, boletos, recibos e extratos bancários com alta precisão.",
   },
   {
     icon: (

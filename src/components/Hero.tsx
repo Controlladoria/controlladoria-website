@@ -25,8 +25,8 @@ export default function Hero() {
 
           {/* Subtitle */}
           <p className="animate-on-scroll stagger-1 text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed">
-            Automatize sua controladoria com inteligência artificial.
-            Envie seus documentos e receba relatórios prontos em minutos.
+            Seus números finalmente vão falar o que importa.
+            15 dias grátis para descobrir como.
           </p>
 
           {/* CTAs */}
@@ -104,7 +104,7 @@ export default function Hero() {
                       <div className="text-lg font-bold text-foreground">
                         {card.value}
                       </div>
-                      <div className="text-xs text-green-400 mt-1">
+                      <div className="text-xs text-green-600 mt-1">
                         {card.change}
                       </div>
                     </div>

@@ -1,16 +1,16 @@
 @import "tailwindcss";
 
 :root {
-  --background: #09090b;
-  --foreground: #fafafa;
+  --background: #ffffff;
+  --foreground: #0a0a0b;
   --primary: #0d767b;
   --primary-light: #0ea5ab;
   --primary-foreground: #ffffff;
   --secondary: #f86a15;
-  --muted: #18181b;
-  --muted-foreground: #a1a1aa;
-  --border: rgba(255, 255, 255, 0.08);
-  --card: #111113;
+  --muted: #f4f4f5;
+  --muted-foreground: #52525b;
+  --border: rgba(0, 0, 0, 0.08);
+  --card: #fafafa;
 }
 
 @theme inline {
@@ -48,8 +48,8 @@ body {
 /* Grid background pattern */
 .grid-pattern {
   background-image:
-    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    linear-gradient(rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
   background-size: 64px 64px;
 }
 

@@ -1,7 +1,7 @@
 "use client";
 
 const CHECK = (
-  <svg className="w-4 h-4 text-green-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+  <svg className="w-4 h-4 text-green-600 shrink-0 mt-0.5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
     <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
   </svg>
 );
@@ -9,7 +9,7 @@ const CHECK = (
 const PLANS = [
   {
     name: "Visão",
-    subtitle: "Para começar a enxergar seu negócio com clareza.",
+    subtitle: "Você quer entender onde está seu dinheiro. Este plano é perfeito para começar.",
     originalPrice: 149,
     price: 99,
     users: "1 usuário",
@@ -25,7 +25,7 @@ const PLANS = [
   },
   {
     name: "Direção",
-    subtitle: "Para crescer com direção estratégica segura.",
+    subtitle: "Você já sabe que precisa crescer. Este plano dá a direção e segurança para fazer isso.",
     originalPrice: 499,
     price: 399,
     users: "Até 5 usuários",
@@ -41,7 +41,7 @@ const PLANS = [
   },
   {
     name: "Expansão",
-    subtitle: "Para empresas que crescem sem limites.",
+    subtitle: "Você está escalando e precisa de um parceiro robusto. Somos nós.",
     originalPrice: null,
     price: null,
     users: "Usuários ilimitados",
@@ -116,8 +116,8 @@ export default function Pricing() {
                       {plan.users}
                     </p>
                     {plan.saving && (
-                      <div className="mt-2 inline-flex items-center px-3 py-1 bg-green-400/10 rounded-lg">
-                        <span className="text-sm font-medium text-green-400">
+                      <div className="mt-2 inline-flex items-center px-3 py-1 bg-green-100 rounded-lg">
+                        <span className="text-sm font-medium text-green-600">
                           Economize R$ {plan.saving},00
                         </span>
                       </div>
@@ -133,7 +133,7 @@ export default function Pricing() {
                 )}
               </div>
 
-              <p className="text-sm font-medium text-green-400 mb-6">
+              <p className="text-sm font-medium text-green-600 mb-6">
                 15 dias grátis
               </p>
 

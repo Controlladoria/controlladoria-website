@@ -7,8 +7,8 @@ const FEATURES = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
       </svg>
     ),
-    title: "Processamento Inteligente",
-    description: "Envie PDFs, imagens, planilhas e XMLs. Nossa IA extrai e classifica automaticamente todos os dados financeiros.",
+    title: "Seus Dados, Organizados",
+    description: "Upload automático. Sem digitação manual. Seus números prontos em minutos.",
   },
   {
     icon: (
@@ -17,7 +17,7 @@ const FEATURES = [
       </svg>
     ),
     title: "DRE Automatizado",
-    description: "Gere sua Demonstração do Resultado do Exercício completa e detalhada em formato gerencial, pronta para análise.",
+    description: "Veja onde seu dinheiro foi. Sem achismo.",
   },
   {
     icon: (
@@ -26,7 +26,7 @@ const FEATURES = [
       </svg>
     ),
     title: "Balanço Patrimonial",
-    description: "Balanço gerencial completo com ativos, passivos e patrimônio líquido organizados automaticamente.",
+    description: "Entenda a saúde financeira real do seu negócio.",
   },
   {
     icon: (
@@ -35,7 +35,7 @@ const FEATURES = [
       </svg>
     ),
     title: "Fluxo de Caixa",
-    description: "Fluxo de caixa detalhado com entradas, saídas e saldo por período, gerado automaticamente.",
+    description: "Preveja crises. Decida com segurança.",
   },
   {
     icon: (
@@ -43,8 +43,8 @@ const FEATURES = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 00-2.455 2.456z" />
       </svg>
     ),
-    title: "IA Avançada",
-    description: "Reconhecimento inteligente de notas fiscais, boletos, recibos e extratos bancários com alta precisão.",
+    title: "Análise Automática",
+    description: "A IA identifica padrões. Você vê oportunidades.",
   },
   {
     icon: (
@@ -53,7 +53,7 @@ const FEATURES = [
       </svg>
     ),
     title: "Multi-Usuário & Equipes",
-    description: "Gerencie sua equipe com permissões granulares. Colaboração em tempo real nos relatórios financeiros.",
+    description: "Colabore sem caos. Cada um vê o que precisa.",
   },
 ];
 

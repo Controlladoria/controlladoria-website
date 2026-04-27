@@ -45,7 +45,7 @@ export default function FAQ() {
             Tá com dúvida? <span className="gradient-text">A gente explica.</span>
           </h2>
           <p className="animate-on-scroll stagger-1 text-lg text-muted-foreground">
-            Tire suas dúvidas sobre a ControlladorIA.
+            As 7 perguntas mais feitas por quem quer finalmente entender seus números.
           </p>
         </div>
 
@@ -88,6 +88,16 @@ export default function FAQ() {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Contact CTA */}
+        <div className="animate-on-scroll stagger-3 text-center mt-8">
+          <p className="text-sm text-muted-foreground">
+            Ainda tem dúvida que não está aqui?{" "}
+            <a href="/contato" className="text-primary hover:text-primary-light underline underline-offset-4 transition-colors">
+              Fale com a gente
+            </a>
+          </p>
         </div>
       </div>
     </section>

@@ -5,7 +5,7 @@ const STEPS = [
     number: "01",
     title: "Envie seus documentos",
     description:
-      "Faça upload de notas fiscais, boletos, extratos bancários, recibos e comprovantes. Aceitamos PDF, imagens, Excel e XML (NF-e, NFS-e).",
+      "Mande tudo: PDFs bagunçados, prints, extratos, notas. Simples assim.",
     visual: (
       <div className="bg-card border border-border rounded-2xl p-6 animate-float">
         <div className="space-y-3">
@@ -26,7 +26,7 @@ const STEPS = [
                     {["245 KB", "1.2 MB", "890 KB"][i]}
                   </div>
                 </div>
-                <svg className="w-5 h-5 text-green-400" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                <svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                 </svg>
               </div>
@@ -40,7 +40,7 @@ const STEPS = [
     number: "02",
     title: "IA processa e classifica",
     description:
-      "Nossa inteligência artificial analisa cada documento, extrai valores, identifica categorias contábeis e organiza tudo automaticamente no plano de contas.",
+      "Enquanto você toma café, nossa IA lê tudo, entende e organiza como se fosse um contador experiente.",
     visual: (
       <div className="bg-card border border-border rounded-2xl p-6 animate-float-slow">
         <div className="space-y-4">
@@ -51,9 +51,9 @@ const STEPS = [
             </span>
           </div>
           {[
-            { cat: "Receita Bruta", val: "R$ 85.400,00", color: "text-green-400" },
-            { cat: "CMV", val: "R$ 34.200,00", color: "text-red-400" },
-            { cat: "Despesas Adm.", val: "R$ 12.800,00", color: "text-yellow-400" },
+            { cat: "Receita Bruta", val: "R$ 85.400,00", color: "text-green-600" },
+            { cat: "CMV", val: "R$ 34.200,00", color: "text-red-600" },
+            { cat: "Despesas Adm.", val: "R$ 12.800,00", color: "text-yellow-600" },
           ].map((item) => (
             <div
               key={item.cat}
@@ -73,7 +73,7 @@ const STEPS = [
     number: "03",
     title: "Relatórios prontos",
     description:
-      "Receba DRE, Balanço Patrimonial e Fluxo de Caixa completos em formato gerencial. Analise, exporte e tome decisões baseadas em dados reais.",
+      "Você recebe relatórios que fazem sentido. Pronto para Excel, pronto para apresentar, pronto para decidir. Tudo isso em uma plataforma — sem precisar de contador terceirizado (por enquanto).",
     visual: (
       <div className="bg-card border border-border rounded-2xl p-6 animate-float-delay">
         <div className="space-y-3">
@@ -94,7 +94,7 @@ const STEPS = [
                 <span className="text-sm">{report.name}</span>
               </div>
               <div className="flex items-center gap-2">
-                <span className="text-xs px-2 py-0.5 bg-green-400/10 text-green-400 rounded">
+                <span className="text-xs px-2 py-0.5 bg-green-400/10 text-green-600 rounded">
                   Pronto
                 </span>
               </div>
@@ -165,12 +165,12 @@ export default function HowItWorks() {
           <h3 className="text-xl font-bold mb-6">Com a ControlladorIA, você tende a ganhar:</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-left mb-10">
             {[
-              "Mais clareza para decidir",
-              "Mais segurança na leitura dos números",
-              "Mais organização na rotina de controladoria",
-              "Mais previsibilidade para planejar",
-              "Menos dependência de improviso",
-              "Mais foco no que realmente importa",
+              "Deixa de adivinhar e começa a escolher",
+              "Seus números você entende. Sem ajuda de especialista.",
+              "Economia de 15+ horas/mês em tarefas operacionais",
+              "Visualiza cenários 3 meses à frente com confiança",
+              "Decisões baseadas em dados, não em intuição",
+              "Você estrategiza. A IA operacionaliza.",
             ].map((item) => (
               <div key={item} className="flex items-center gap-2 text-muted-foreground">
                 <svg className="w-4 h-4 text-primary shrink-0" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">

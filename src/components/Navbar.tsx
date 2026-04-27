@@ -25,7 +25,7 @@ export default function Navbar() {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "navbar-blur bg-[#09090b]/80 border-b border-border"
+          ? "navbar-blur bg-white/80 border-b border-border"
           : "bg-transparent"
       }`}
     >
@@ -34,7 +34,7 @@ export default function Navbar() {
           {/* Logo */}
           <a href="#" className="flex items-center gap-2 shrink-0">
             <Image
-              src="/logo-horizontal-white.svg"
+              src="/logo.svg"
               alt="ControlladorIA"
               width={220}
               height={48}
@@ -96,7 +96,7 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="lg:hidden navbar-blur bg-[#09090b]/95 border-t border-border">
+        <div className="lg:hidden navbar-blur bg-white/95 border-t border-border">
           <div className="px-4 py-4 space-y-3">
             {NAV_LINKS.map((link) => (
               <a

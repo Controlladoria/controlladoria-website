@@ -29,7 +29,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="col-span-2 md:col-span-1">
             <Image
-              src="/logo-horizontal-white.svg"
+              src="/logo.svg"
               alt="ControlladorIA"
               width={200}
               height={44}

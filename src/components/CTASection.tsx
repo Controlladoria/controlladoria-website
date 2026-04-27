@@ -9,19 +9,18 @@ export default function CTASection() {
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative text-center">
         <h2 className="animate-on-scroll text-3xl sm:text-4xl lg:text-6xl font-bold mb-6 leading-tight">
-          Pronto para transformar sua{" "}
-          <span className="gradient-text">controladoria?</span>
+          Pronto para descobrir como seus números podem{" "}
+          <span className="gradient-text">guiar seu negócio?</span>
         </h2>
         <p className="animate-on-scroll stagger-1 text-lg text-muted-foreground max-w-2xl mx-auto mb-10">
-          Junte-se a centenas de empresas que já automatizaram seus relatórios
-          financeiros com inteligência artificial.
+          15 dias grátis. Sem cartão. Sem surpresa.
         </p>
         <div className="animate-on-scroll stagger-2 flex flex-col sm:flex-row gap-4 justify-center">
           <a
             href="#planos"
             className="btn-press inline-flex items-center justify-center px-8 py-4 rounded-xl bg-primary text-primary-foreground font-semibold text-base hover:bg-primary-light transition-colors glow-primary"
           >
-            Começar 15 Dias Grátis
+            Comece seu teste grátis
             <svg
               className="ml-2 w-4 h-4"
               fill="none"
@@ -37,7 +36,7 @@ export default function CTASection() {
             </svg>
           </a>
           <a
-            href="#"
+            href="/contato"
             className="btn-press inline-flex items-center justify-center px-8 py-4 rounded-xl border border-border text-foreground font-semibold text-base hover:bg-muted transition-colors"
           >
             Falar com Vendas

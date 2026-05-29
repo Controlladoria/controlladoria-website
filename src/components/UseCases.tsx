@@ -4,6 +4,19 @@ import { useState } from "react";
 
 const TABS = [
   {
+    id: "pequenos",
+    label: "Pequenos Negócios",
+    title: "Finalmente saber se o mês fechou no lucro",
+    description:
+      "Padaria, salão, loja de bairro, food truck — não importa. Você manda as notas e extratos, a ControlladorIA te diz quanto entrou, quanto saiu e se você está ganhando dinheiro de verdade. Sem planilha, sem contador, sem dor de cabeça.",
+    preview: [
+      { role: "user", text: "Mandei os extratos e notas de Março. Ganhei dinheiro esse mês?" },
+      { role: "ai", text: "Sim! Março fechou positivo. Receita: R$ 18.400. Custos e despesas: R$ 12.900. Lucro do mês: R$ 5.500 (margem de 29.9%). Seu melhor mês desde Outubro." },
+      { role: "user", text: "Onde estou gastando mais?" },
+      { role: "ai", text: "Top 3 gastos de Março: 1) Fornecedores/mercadoria: R$ 6.200 (48%) 2) Aluguel: R$ 2.800 (21.7%) 3) Energia e água: R$ 980 (7.6%). Dica: mercadoria subiu 12% vs Fevereiro — vale revisar fornecedor." },
+    ],
+  },
+  {
     id: "contabilidade",
     label: "Escritórios Contábeis",
     title: "Automatize a controladoria dos seus clientes",
@@ -14,19 +27,6 @@ const TABS = [
       { role: "ai", text: "47 documentos processados. DRE Gerencial, Balanço Gerencial, Indicadores e Fluxo de Caixa de Janeiro prontos. Receita Bruta: R$ 284.500. Lucro Líquido: R$ 42.300. Margem EBITDA: 18.4%." },
       { role: "user", text: "Exportar DRE em formato gerencial" },
       { role: "ai", text: "DRE Gerencial exportado para Excel. Inclui comparativo com mês anterior e variação percentual." },
-    ],
-  },
-  {
-    id: "pme",
-    label: "PMEs",
-    title: "Controle financeiro sem complexidade",
-    description:
-      "Pequenas e médias empresas podem ter visão completa de suas finanças sem precisar de um departamento contábil dedicado. Envie seus documentos e receba seus relatórios.",
-    preview: [
-      { role: "user", text: "Preciso do fluxo de caixa do último trimestre" },
-      { role: "ai", text: "Fluxo de Caixa Q4/2024 gerado. Entradas: R$ 156.200. Saídas: R$ 128.400. Saldo: R$ 27.800. Destaque: despesas operacionais subiram 8% vs Q3." },
-      { role: "user", text: "Quais as maiores despesas?" },
-      { role: "ai", text: "Top 3 despesas: 1) Folha de pagamento: R$ 45.600 (35.5%) 2) Aluguel e condomínio: R$ 18.200 (14.2%) 3) Fornecedores: R$ 32.100 (25%)" },
     ],
   },
   {

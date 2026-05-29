@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "ControlladorIA — Decisões Inteligentes. Crescimento Real.",
   description:
-    "Automatize seus relatórios financeiros com IA. DRE, Balanço Patrimonial e Fluxo de Caixa em minutos.",
+    "Plataforma de controladoria com IA. DRE Gerencial, Balanço Gerencial, Indicadores e Fluxo de Caixa prontos em minutos — sem contador terceirizado.",
   icons: {
     icon: "/favicon.svg",
   },

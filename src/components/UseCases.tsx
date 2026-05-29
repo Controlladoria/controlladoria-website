@@ -11,7 +11,7 @@ const TABS = [
       "Gerencie múltiplas empresas em uma única plataforma. Processe centenas de documentos por mês e entregue relatórios gerenciais completos para seus clientes sem esforço manual.",
     preview: [
       { role: "user", text: "Upload: 47 notas fiscais de Janeiro — Cliente ABC Ltda." },
-      { role: "ai", text: "47 documentos processados. DRE, Balanço e Fluxo de Caixa de Janeiro gerados com sucesso. Receita Bruta: R$ 284.500. Lucro Líquido: R$ 42.300." },
+      { role: "ai", text: "47 documentos processados. DRE Gerencial, Balanço Gerencial, Indicadores e Fluxo de Caixa de Janeiro prontos. Receita Bruta: R$ 284.500. Lucro Líquido: R$ 42.300. Margem EBITDA: 18.4%." },
       { role: "user", text: "Exportar DRE em formato gerencial" },
       { role: "ai", text: "DRE Gerencial exportado para Excel. Inclui comparativo com mês anterior e variação percentual." },
     ],
@@ -34,7 +34,7 @@ const TABS = [
     label: "Gestores Financeiros",
     title: "Decisões rápidas baseadas em dados reais",
     description:
-      "Tenha acesso imediato a DRE, Balanço e Fluxo de Caixa atualizados. Compare períodos, identifique tendências e tome decisões informadas com relatórios gerados em minutos.",
+      "Tenha acesso imediato a DRE Gerencial, Balanço Gerencial, Indicadores e Fluxo de Caixa atualizados. Compare períodos, identifique tendências e tome decisões com dados reais.",
     preview: [
       { role: "user", text: "Comparar DRE deste mês com mesmo período ano passado" },
       { role: "ai", text: "Comparativo pronto. Receita cresceu 23.4% (R$ 312K → R$ 385K). Margem líquida melhorou de 8.2% para 11.7%. Destaque positivo: redução de 15% em despesas administrativas." },

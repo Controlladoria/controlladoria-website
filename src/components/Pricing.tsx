@@ -20,7 +20,7 @@ const PLANS = [
     features: [
       "Upload ilimitado de imagens, PDFs e XMLs",
       "IA avançada para extração de dados",
-      "DRE, Balanço e Fluxo de Caixa",
+      "DRE Gerencial, Balanço Gerencial e Indicadores",
       "Suporte por e-mail",
     ],
   },

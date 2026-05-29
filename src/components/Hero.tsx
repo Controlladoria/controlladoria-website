@@ -1,13 +1,112 @@
 "use client";
 
+import { useEffect, useRef, useState } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
+// ── Animated counter ──────────────────────────────────────────────────────────
+function useCountUp(target: number, suffix: string = "", duration = 1400) {
+  const [display, setDisplay] = useState("0" + suffix);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting) return;
+        observer.disconnect();
+        let startTs: number | null = null;
+        const tick = (ts: number) => {
+          if (startTs === null) startTs = ts;
+          const progress = Math.min((ts - startTs) / duration, 1);
+          const eased = 1 - Math.pow(1 - progress, 3); // ease-out cubic
+          setDisplay(Math.round(eased * target) + suffix);
+          if (progress < 1) requestAnimationFrame(tick);
+        };
+        requestAnimationFrame(tick);
+      },
+      { threshold: 0.6 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [target, suffix, duration]);
+
+  return { display, ref };
+}
+
 const STATS = [
-  { value: "10x", label: "Mais rápido" },
-  { value: "99%", label: "Precisão" },
-  { value: "15", label: "Dias grátis" },
+  { target: 10, suffix: "x", label: "Mais rápido" },
+  { target: 99, suffix: "%", label: "Precisão" },
+  { target: 15, suffix: "", label: "Dias grátis" },
 ];
 
+const CHART_HEIGHTS = [40, 55, 45, 60, 70, 65, 80, 75, 90, 85, 95, 100];
+
+const INDICATORS = [
+  { label: "Margem EBITDA", value: "28.4%", up: true },
+  { label: "Margem Líquida", value: "12.1%", up: true },
+  { label: "ROI", value: "8.3%", up: true },
+  { label: "Liquidez Corrente", value: "1.82", up: false },
+];
+
+// ── Stat counter widget ───────────────────────────────────────────────────────
+function StatCounter({ target, suffix, label }: { target: number; suffix: string; label: string }) {
+  const { display, ref } = useCountUp(target, suffix);
+  return (
+    <div ref={ref} className="text-center">
+      <div className="text-3xl sm:text-4xl font-bold gradient-text-accent">{display}</div>
+      <div className="text-sm text-muted-foreground mt-1">{label}</div>
+    </div>
+  );
+}
+
+// ── Chart with animated bars ──────────────────────────────────────────────────
+function AnimatedChart() {
+  const [ready, setReady] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          observer.disconnect();
+          // slight delay so the card is fully visible first
+          setTimeout(() => setReady(true), 120);
+        }
+      },
+      { threshold: 0.4 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div ref={ref} className="bg-muted rounded-xl p-4 border border-border">
+      <div className="flex justify-between items-center mb-4">
+        <span className="text-sm font-medium">DRE Gerencial — Últimos 12 meses</span>
+        <span className="text-xs text-muted-foreground">2024</span>
+      </div>
+      <div className="flex items-end gap-2 h-32">
+        {CHART_HEIGHTS.map((h, i) => (
+          <div
+            key={i}
+            className="flex-1 rounded-t-sm"
+            style={{
+              height: ready ? `${h}%` : "2px",
+              transition: `height 0.7s cubic-bezier(0.22,1,0.36,1) ${i * 45}ms`,
+              background: `linear-gradient(to top, var(--primary), var(--primary-light))`,
+              opacity: 0.55 + (i / CHART_HEIGHTS.length) * 0.45,
+            }}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
+
+// ── Hero ──────────────────────────────────────────────────────────────────────
 export default function Hero() {
   const { t } = useLanguage();
 
@@ -23,9 +122,7 @@ export default function Hero() {
           <h1 className="animate-on-scroll text-4xl sm:text-5xl lg:text-7xl font-bold tracking-tight leading-[1.1] mb-6">
             {t("hero.headline1")}
             <br />
-            <span className="gradient-text">
-              {t("hero.headline2")}
-            </span>
+            <span className="gradient-text">{t("hero.headline2")}</span>
           </h1>
 
           {/* Subtitle */}
@@ -40,18 +137,8 @@ export default function Hero() {
               className="btn-press inline-flex items-center justify-center px-8 py-4 rounded-xl bg-primary text-primary-foreground font-semibold text-base hover:bg-primary-light transition-colors glow-primary"
             >
               {t("hero.ctaPrimary")}
-              <svg
-                className="ml-2 w-4 h-4"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M13 7l5 5-5 5M6 12h12"
-                />
+              <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5-5 5M6 12h12" />
               </svg>
             </a>
             <a
@@ -67,17 +154,10 @@ export default function Hero() {
             {t("hero.trustLine")}
           </p>
 
-          {/* Stats */}
+          {/* Animated stats */}
           <div className="animate-on-scroll stagger-4 flex justify-center gap-12 sm:gap-20 mb-20">
             {STATS.map((stat) => (
-              <div key={stat.label} className="text-center">
-                <div className="text-3xl sm:text-4xl font-bold gradient-text-accent">
-                  {stat.value}
-                </div>
-                <div className="text-sm text-muted-foreground mt-1">
-                  {stat.label}
-                </div>
-              </div>
+              <StatCounter key={stat.label} target={stat.target} suffix={stat.suffix} label={stat.label} />
             ))}
           </div>
 
@@ -90,57 +170,55 @@ export default function Hero() {
                 <div className="w-3 h-3 rounded-full bg-yellow-500/60" />
                 <div className="w-3 h-3 rounded-full bg-green-500/60" />
                 <div className="flex-1 ml-4 h-6 bg-background rounded-md flex items-center px-3">
-                  <span className="text-xs text-muted-foreground">
-                    app.controlladoria.com.br
-                  </span>
+                  <span className="text-xs text-muted-foreground">app.controlladoria.com.br</span>
                 </div>
               </div>
+
               {/* Mock dashboard */}
               <div className="p-6 lg:p-8 bg-card">
-                <div className="grid grid-cols-3 gap-4 mb-6">
+                {/* KPI cards */}
+                <div className="grid grid-cols-3 gap-4 mb-4">
                   {[
                     { label: "Receita Bruta", value: "R$ 1.284.500", change: "+12.3%" },
                     { label: "Lucro Líquido", value: "R$ 342.100", change: "+8.7%" },
-                    { label: "Margem EBITDA", value: "28.4%", change: "+2.1%" },
+                    { label: "Margem EBITDA", value: "28.4%", change: "+2.1pp" },
                   ].map((card) => (
-                    <div
-                      key={card.label}
-                      className="bg-muted rounded-xl p-4 border border-border"
-                    >
-                      <div className="text-xs text-muted-foreground mb-1">
+                    <div key={card.label} className="bg-muted rounded-xl p-4 border border-border">
+                      <div className="text-xs font-medium mb-1" style={{ color: "var(--primary)" }}>
                         {card.label}
                       </div>
-                      <div className="text-lg font-bold text-foreground">
-                        {card.value}
-                      </div>
-                      <div className="text-xs text-green-600 mt-1">
-                        {card.change}
-                      </div>
+                      <div className="text-lg font-bold text-foreground">{card.value}</div>
+                      <div className="text-xs text-green-600 mt-1">{card.change}</div>
                     </div>
                   ))}
                 </div>
-                {/* Chart mock */}
+
+                {/* Animated DRE chart */}
+                <div className="mb-4">
+                  <AnimatedChart />
+                </div>
+
+                {/* Indicadores Gerenciais row */}
                 <div className="bg-muted rounded-xl p-4 border border-border">
-                  <div className="flex justify-between items-center mb-4">
-                    <span className="text-sm font-medium">
-                      DRE — Últimos 12 meses
+                  <div className="flex items-center justify-between mb-3">
+                    <span className="text-sm font-medium flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-primary inline-block" />
+                      Indicadores Gerenciais
                     </span>
-                    <span className="text-xs text-muted-foreground">2024</span>
+                    <span className="text-xs px-2 py-0.5 bg-primary/10 text-primary rounded-full font-medium">
+                      Automático
+                    </span>
                   </div>
-                  <div className="flex items-end gap-2 h-32">
-                    {[40, 55, 45, 60, 70, 65, 80, 75, 90, 85, 95, 100].map(
-                      (h, i) => (
-                        <div
-                          key={i}
-                          className="flex-1 rounded-t-sm"
-                          style={{
-                            height: `${h}%`,
-                            background: `linear-gradient(to top, var(--primary), var(--primary-light))`,
-                            opacity: 0.6 + (i / 12) * 0.4,
-                          }}
-                        />
-                      )
-                    )}
+                  <div className="grid grid-cols-4 gap-3">
+                    {INDICATORS.map((ind) => (
+                      <div key={ind.label} className="bg-background rounded-lg p-3 border border-border text-center">
+                        <div className="text-xs text-muted-foreground mb-1 truncate">{ind.label}</div>
+                        <div className="text-base font-bold text-foreground">{ind.value}</div>
+                        <div className={`text-xs mt-0.5 ${ind.up ? "text-green-600" : "text-blue-500"}`}>
+                          {ind.up ? "▲" : "●"} ok
+                        </div>
+                      </div>
+                    ))}
                   </div>
                 </div>
               </div>

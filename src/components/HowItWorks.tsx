@@ -1,167 +1,80 @@
 "use client";
 
-const STEPS = [
-  {
-    number: "01",
-    title: "Envie seus documentos",
-    description:
-      "Mande tudo: PDFs bagunçados, prints, extratos, notas. Simples assim.",
-    visual: (
-      <div className="bg-card border border-border rounded-2xl p-6 animate-float">
-        <div className="space-y-3">
-          {["NF-e_Janeiro.xml", "Extrato_Banco.pdf", "Boletos_Fev.pdf"].map(
-            (file, i) => (
-              <div
-                key={file}
-                className="flex items-center gap-3 p-3 bg-muted rounded-lg border border-border"
-              >
-                <div className="w-8 h-8 rounded bg-primary/10 flex items-center justify-center">
-                  <svg className="w-4 h-4 text-primary" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5m-13.5-9L12 3m0 0l4.5 4.5M12 3v13.5" />
-                  </svg>
-                </div>
-                <div className="flex-1 min-w-0">
-                  <div className="text-sm truncate">{file}</div>
-                  <div className="text-xs text-muted-foreground">
-                    {["245 KB", "1.2 MB", "890 KB"][i]}
-                  </div>
-                </div>
-                <svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                </svg>
-              </div>
-            )
-          )}
-        </div>
-      </div>
-    ),
-  },
-  {
-    number: "02",
-    title: "IA processa e classifica",
-    description:
-      "Enquanto você toma café, nossa IA lê tudo, entende e organiza como se fosse um contador experiente.",
-    visual: (
-      <div className="bg-card border border-border rounded-2xl p-6 animate-float-slow">
-        <div className="space-y-4">
-          <div className="flex items-center gap-2 mb-2">
-            <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-            <span className="text-xs text-muted-foreground">
-              Processando com IA...
-            </span>
-          </div>
-          {[
-            { cat: "Receita Bruta", val: "R$ 85.400,00", color: "text-green-600" },
-            { cat: "CMV", val: "R$ 34.200,00", color: "text-red-600" },
-            { cat: "Despesas Adm.", val: "R$ 12.800,00", color: "text-yellow-600" },
-          ].map((item) => (
-            <div
-              key={item.cat}
-              className="flex justify-between items-center p-3 bg-muted rounded-lg border border-border"
-            >
-              <span className="text-sm">{item.cat}</span>
-              <span className={`text-sm font-mono font-medium ${item.color}`}>
-                {item.val}
-              </span>
-            </div>
-          ))}
-        </div>
-      </div>
-    ),
-  },
-  {
-    number: "03",
-    title: "Relatórios prontos",
-    description:
-      "Você recebe relatórios que fazem sentido. Pronto para Excel, pronto para apresentar, pronto para decidir. Tudo isso em uma plataforma — sem precisar de contador terceirizado (por enquanto).",
-    visual: (
-      <div className="bg-card border border-border rounded-2xl p-6 animate-float-delay">
-        <div className="space-y-3">
-          <div className="text-sm font-medium mb-3">
-            Relatórios Disponíveis
-          </div>
-          {[
-            { name: "DRE Gerencial", icon: "📊" },
-            { name: "Balanço Patrimonial", icon: "⚖️" },
-            { name: "Fluxo de Caixa", icon: "💰" },
-          ].map((report) => (
-            <div
-              key={report.name}
-              className="flex items-center justify-between p-3 bg-muted rounded-lg border border-border"
-            >
-              <div className="flex items-center gap-3">
-                <span className="text-lg">{report.icon}</span>
-                <span className="text-sm">{report.name}</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="text-xs px-2 py-0.5 bg-green-400/10 text-green-600 rounded">
-                  Pronto
-                </span>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    ),
-  },
-];
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function HowItWorks() {
-  return (
-    <section id="como-funciona" className="relative py-24 lg:py-32 overflow-clip">
-      <div className="orb w-[400px] h-[400px] bg-primary/[0.03] top-1/2 -left-40" />
+  const { t } = useLanguage();
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+  const steps = [
+    {
+      number: "01",
+      title: t("howItWorks.step1Title"),
+      description: t("howItWorks.step1Desc"),
+      icon: (
+        <svg className="w-7 h-7 text-primary" fill="none" stroke="currentColor" strokeWidth="1.75" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M12 16.5V9.75m0 0 3 3m-3-3-3 3M6.75 19.5a4.5 4.5 0 0 1-1.41-8.775 5.25 5.25 0 0 1 10.233-2.33 3 3 0 0 1 3.758 3.848A3.752 3.752 0 0 1 18 19.5H6.75Z" />
+        </svg>
+      ),
+    },
+    {
+      number: "02",
+      title: t("howItWorks.step2Title"),
+      description: t("howItWorks.step2Desc"),
+      icon: (
+        <svg className="w-7 h-7 text-primary" fill="none" stroke="currentColor" strokeWidth="1.75" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z" />
+        </svg>
+      ),
+    },
+    {
+      number: "03",
+      title: t("howItWorks.step3Title"),
+      description: t("howItWorks.step3Desc"),
+      icon: (
+        <svg className="w-7 h-7 text-primary" fill="none" stroke="currentColor" strokeWidth="1.75" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 0 1 3 19.875v-6.75ZM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V8.625ZM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V4.125Z" />
+        </svg>
+      ),
+    },
+  ];
+
+  return (
+    <section id="como-funciona" className="relative py-24 lg:py-32 bg-muted/40">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-20">
+        <div className="text-center mb-16">
           <h2 className="animate-on-scroll text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
             Como <span className="gradient-text">funciona</span>
           </h2>
           <p className="animate-on-scroll stagger-1 text-lg text-muted-foreground max-w-2xl mx-auto">
-            Em três passos simples, transforme documentos financeiros em
-            relatórios gerenciais completos.
+            {t("howItWorks.subtitle")}
           </p>
         </div>
 
-        {/* How it works intro */}
-        <div className="animate-on-scroll text-center mb-16 max-w-2xl mx-auto">
-          <div className="space-y-3 text-muted-foreground">
-            <p>Você envia os documentos do seu negócio.</p>
-            <p>A IA processa, interpreta e organiza as informações.</p>
-            <p>Você recebe uma leitura estruturada que ajuda a enxergar o que está acontecendo com mais clareza.</p>
-          </div>
-        </div>
-
-        {/* Steps */}
-        <div className="space-y-24 lg:space-y-32">
-          {STEPS.map((step, i) => (
+        {/* 3-column cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {steps.map((step, i) => (
             <div
               key={step.number}
-              className={`animate-on-scroll flex flex-col ${
-                i % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
-              } items-center gap-12 lg:gap-20`}
+              className={`animate-on-scroll stagger-${i + 1} bg-card border border-border rounded-2xl p-8 hover:border-primary/40 hover:shadow-md transition-all`}
             >
-              {/* Text */}
-              <div className="flex-1 max-w-lg">
-                <div className="text-7xl lg:text-8xl font-bold text-muted/80 mb-4 select-none">
-                  {step.number}
+              {/* Icon row: icon top-left, step number top-right */}
+              <div className="flex items-start justify-between mb-4">
+                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
+                  {step.icon}
                 </div>
-                <h3 className="text-2xl lg:text-3xl font-bold mb-4">
-                  {step.title}
-                </h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  {step.description}
-                </p>
+                <span className="text-4xl font-bold text-muted-foreground/30 select-none">
+                  {step.number}
+                </span>
               </div>
-
-              {/* Visual */}
-              <div className="flex-1 w-full max-w-md">{step.visual}</div>
+              <h3 className="text-xl font-bold mt-4 mb-2">{step.title}</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">{step.description}</p>
             </div>
           ))}
         </div>
 
         {/* Benefits + CTA */}
-        <div className="animate-on-scroll mt-24 text-center max-w-2xl mx-auto">
+        <div className="animate-on-scroll mt-16 text-center max-w-2xl mx-auto">
           <h3 className="text-xl font-bold mb-6">Com a ControlladorIA, você tende a ganhar:</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-left mb-10">
             {[
@@ -181,10 +94,10 @@ export default function HowItWorks() {
             ))}
           </div>
           <a
-            href="#planos"
+            href="https://app.controlladoria.com.br/register"
             className="btn-press inline-flex items-center justify-center px-8 py-4 rounded-xl bg-primary text-primary-foreground font-semibold text-base hover:bg-primary-light transition-colors"
           >
-            Experimentar Grátis
+            {t("howItWorks.cta")}
           </a>
         </div>
       </div>

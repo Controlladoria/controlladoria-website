@@ -2,18 +2,27 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import { useLanguage } from "@/contexts/LanguageContext";
+import type { Language } from "@/lib/translations";
 
-const NAV_LINKS = [
-  { label: "Recursos", href: "#recursos" },
-  { label: "Casos de Uso", href: "#casos-de-uso" },
-  { label: "Como Funciona", href: "#como-funciona" },
-  { label: "Planos", href: "#planos" },
-  { label: "Dúvidas", href: "#faq" },
+const LANG_OPTIONS: { code: Language; label: string; flag: string }[] = [
+  { code: "pt", label: "PT-BR", flag: "🇧🇷" },
+  { code: "en", label: "EN", flag: "🇺🇸" },
+  { code: "es", label: "ES", flag: "🇪🇸" },
 ];
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const { lang, setLang, t } = useLanguage();
+
+  const NAV_LINKS = [
+    { labelKey: "nav.features", href: "#recursos" },
+    { labelKey: "nav.useCases", href: "#casos-de-uso" },
+    { labelKey: "nav.howItWorks", href: "#como-funciona" },
+    { labelKey: "nav.pricing", href: "#planos" },
+    { labelKey: "nav.faq", href: "#faq" },
+  ];
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -34,11 +43,11 @@ export default function Navbar() {
           {/* Logo */}
           <a href="#" className="flex items-center gap-2 shrink-0">
             <Image
-              src="/logo.svg"
+              src="/logo-horizontal.svg"
               alt="ControlladorIA"
-              width={220}
-              height={48}
-              className="h-10 lg:h-12 w-auto"
+              width={180}
+              height={40}
+              className="h-8 lg:h-10 w-auto"
               priority
             />
           </a>
@@ -51,14 +60,33 @@ export default function Navbar() {
                 href={link.href}
                 className="text-sm text-muted-foreground hover:text-foreground transition-colors"
               >
-                {link.label}
+                {t(link.labelKey)}
               </a>
             ))}
+
+            {/* Language switcher */}
+            <div className="flex items-center gap-1">
+              {LANG_OPTIONS.map((option) => (
+                <button
+                  key={option.code}
+                  onClick={() => setLang(option.code)}
+                  className={`text-xs px-2 py-1 rounded font-medium transition-colors ${
+                    lang === option.code
+                      ? "bg-primary/10 text-primary"
+                      : "text-muted-foreground hover:text-foreground"
+                  }`}
+                  aria-label={`Switch to ${option.label}`}
+                >
+                  {option.flag} {option.label}
+                </button>
+              ))}
+            </div>
+
             <a
               href="https://app.controlladoria.com.br/register"
               className="btn-press inline-flex items-center px-5 py-2.5 rounded-lg bg-primary text-primary-foreground text-sm font-medium hover:bg-primary-light transition-colors shadow-sm"
             >
-              Começar Grátis
+              {t("nav.cta")}
             </a>
           </div>
 
@@ -98,6 +126,24 @@ export default function Navbar() {
       {mobileOpen && (
         <div className="lg:hidden navbar-blur bg-white/95 border-t border-border">
           <div className="px-4 py-4 space-y-3">
+            {/* Language switcher row */}
+            <div className="flex items-center gap-2 pb-2 border-b border-border">
+              {LANG_OPTIONS.map((option) => (
+                <button
+                  key={option.code}
+                  onClick={() => setLang(option.code)}
+                  className={`text-xs px-2 py-1 rounded font-medium transition-colors ${
+                    lang === option.code
+                      ? "bg-primary/10 text-primary"
+                      : "text-muted-foreground hover:text-foreground"
+                  }`}
+                  aria-label={`Switch to ${option.label}`}
+                >
+                  {option.flag} {option.label}
+                </button>
+              ))}
+            </div>
+
             {NAV_LINKS.map((link) => (
               <a
                 key={link.href}
@@ -105,15 +151,15 @@ export default function Navbar() {
                 onClick={() => setMobileOpen(false)}
                 className="block text-sm text-muted-foreground hover:text-foreground py-2 transition-colors"
               >
-                {link.label}
+                {t(link.labelKey)}
               </a>
             ))}
             <a
-              href="#planos"
+              href="https://app.controlladoria.com.br/register"
               onClick={() => setMobileOpen(false)}
               className="btn-press block text-center px-5 py-2.5 rounded-lg bg-primary text-primary-foreground text-sm font-medium hover:bg-primary-light transition-colors"
             >
-              Teste Grátis
+              {t("nav.cta")}
             </a>
           </div>
         </div>

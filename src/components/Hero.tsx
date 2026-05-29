@@ -1,3 +1,7 @@
+"use client";
+
+import { useLanguage } from "@/contexts/LanguageContext";
+
 const STATS = [
   { value: "10x", label: "Mais rápido" },
   { value: "99%", label: "Precisão" },
@@ -5,6 +9,7 @@ const STATS = [
 ];
 
 export default function Hero() {
+  const { t } = useLanguage();
 
   return (
     <section className="relative pt-32 lg:pt-40 pb-20 lg:pb-32 overflow-clip">
@@ -16,17 +21,16 @@ export default function Hero() {
         <div className="text-center max-w-4xl mx-auto">
           {/* Headline */}
           <h1 className="animate-on-scroll text-4xl sm:text-5xl lg:text-7xl font-bold tracking-tight leading-[1.1] mb-6">
-            Decisões Inteligentes.
+            {t("hero.headline1")}
             <br />
             <span className="gradient-text">
-              Crescimento Real.
+              {t("hero.headline2")}
             </span>
           </h1>
 
           {/* Subtitle */}
           <p className="animate-on-scroll stagger-1 text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed">
-            Seus números finalmente vão falar o que importa.
-            15 dias grátis para descobrir como.
+            {t("hero.subtitle")}
           </p>
 
           {/* CTAs */}
@@ -35,7 +39,7 @@ export default function Hero() {
               href="https://app.controlladoria.com.br/register"
               className="btn-press inline-flex items-center justify-center px-8 py-4 rounded-xl bg-primary text-primary-foreground font-semibold text-base hover:bg-primary-light transition-colors glow-primary"
             >
-              Começar 15 Dias Grátis
+              {t("hero.ctaPrimary")}
               <svg
                 className="ml-2 w-4 h-4"
                 fill="none"
@@ -54,13 +58,13 @@ export default function Hero() {
               href="#como-funciona"
               className="btn-press inline-flex items-center justify-center px-8 py-4 rounded-xl border border-border text-foreground font-semibold text-base hover:bg-muted transition-colors"
             >
-              Como Funciona
+              {t("hero.ctaSecondary")}
             </a>
           </div>
 
           {/* Micro-trust line */}
           <p className="animate-on-scroll stagger-3 text-sm text-muted-foreground mb-12">
-            Sem cartão de crédito&nbsp;·&nbsp;Configuração em 5 minutos&nbsp;·&nbsp;Cancele quando quiser
+            {t("hero.trustLine")}
           </p>
 
           {/* Stats */}

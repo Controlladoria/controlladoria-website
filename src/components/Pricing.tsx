@@ -144,7 +144,7 @@ export default function Pricing() {
               <a
                 href={plan.ctaHref}
                 className={`btn-press block text-center px-6 py-3 rounded-xl font-semibold text-sm transition-all mb-8 ${
-                  plan.highlighted
+                  plan.cta !== "Falar com Vendas"
                     ? "bg-primary text-primary-foreground hover:bg-primary-light glow-primary"
                     : "bg-muted text-foreground hover:bg-muted/80 border border-border"
                 }`}

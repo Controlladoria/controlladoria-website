@@ -95,7 +95,7 @@ export default function Features() {
             href="https://app.controlladoria.com.br/register"
             className="btn-press inline-flex items-center justify-center px-8 py-4 rounded-xl bg-primary text-primary-foreground font-semibold text-base hover:bg-primary-light transition-colors glow-primary"
           >
-            Começar Grátis — 15 dias sem cartão
+            Começar Grátis
             <svg
               className="ml-2 w-4 h-4"
               fill="none"

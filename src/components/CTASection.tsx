@@ -20,7 +20,7 @@ export default function CTASection() {
             href="https://app.controlladoria.com.br/register"
             className="btn-press inline-flex items-center justify-center px-8 py-4 rounded-xl bg-primary text-primary-foreground font-semibold text-base hover:bg-primary-light transition-colors glow-primary"
           >
-            Comece seu teste grátis
+            Começar Grátis
             <svg
               className="ml-2 w-4 h-4"
               fill="none"

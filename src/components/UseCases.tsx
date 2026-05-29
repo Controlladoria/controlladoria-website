@@ -108,7 +108,7 @@ export default function UseCases() {
               href="https://app.controlladoria.com.br/register"
               className="btn-press inline-flex items-center px-6 py-3 rounded-lg bg-primary text-primary-foreground font-medium hover:bg-primary-light transition-colors"
             >
-              Experimentar Grátis
+              Começar Grátis
               <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5-5 5M6 12h12" />
               </svg>

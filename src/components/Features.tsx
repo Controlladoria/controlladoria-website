@@ -72,7 +72,7 @@ export default function Features() {
         </div>
 
         {/* Cards grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
           {FEATURES.map((feature, i) => (
             <div
               key={feature.title}
@@ -87,6 +87,25 @@ export default function Features() {
               </p>
             </div>
           ))}
+        </div>
+
+        {/* Section CTA */}
+        <div className="animate-on-scroll text-center">
+          <a
+            href="https://app.controlladoria.com.br/register"
+            className="btn-press inline-flex items-center justify-center px-8 py-4 rounded-xl bg-primary text-primary-foreground font-semibold text-base hover:bg-primary-light transition-colors glow-primary"
+          >
+            Começar Grátis — 15 dias sem cartão
+            <svg
+              className="ml-2 w-4 h-4"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              viewBox="0 0 24 24"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5-5 5M6 12h12" />
+            </svg>
+          </a>
         </div>
       </div>
     </section>

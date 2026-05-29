@@ -30,9 +30,9 @@ export default function Hero() {
           </p>
 
           {/* CTAs */}
-          <div className="animate-on-scroll stagger-2 flex flex-col sm:flex-row gap-4 justify-center mb-16">
+          <div className="animate-on-scroll stagger-2 flex flex-col sm:flex-row gap-4 justify-center mb-5">
             <a
-              href="#planos"
+              href="https://app.controlladoria.com.br/register"
               className="btn-press inline-flex items-center justify-center px-8 py-4 rounded-xl bg-primary text-primary-foreground font-semibold text-base hover:bg-primary-light transition-colors glow-primary"
             >
               Começar 15 Dias Grátis
@@ -58,8 +58,13 @@ export default function Hero() {
             </a>
           </div>
 
+          {/* Micro-trust line */}
+          <p className="animate-on-scroll stagger-3 text-sm text-muted-foreground mb-12">
+            Sem cartão de crédito&nbsp;·&nbsp;Configuração em 5 minutos&nbsp;·&nbsp;Cancele quando quiser
+          </p>
+
           {/* Stats */}
-          <div className="animate-on-scroll stagger-3 flex justify-center gap-12 sm:gap-20 mb-20">
+          <div className="animate-on-scroll stagger-4 flex justify-center gap-12 sm:gap-20 mb-20">
             {STATS.map((stat) => (
               <div key={stat.label} className="text-center">
                 <div className="text-3xl sm:text-4xl font-bold gradient-text-accent">
@@ -73,7 +78,7 @@ export default function Hero() {
           </div>
 
           {/* Product mockup */}
-          <div className="animate-on-scroll stagger-4 relative mx-auto max-w-5xl">
+          <div className="animate-on-scroll stagger-5 relative mx-auto max-w-5xl">
             <div className="glow-primary-strong rounded-2xl overflow-hidden border border-border bg-card">
               {/* Browser chrome */}
               <div className="flex items-center gap-2 px-4 py-3 bg-muted border-b border-border">

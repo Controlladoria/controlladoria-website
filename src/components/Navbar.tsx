@@ -4,8 +4,8 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 
 const NAV_LINKS = [
-  { label: "Sobre Nós", href: "#sobre-nos" },
   { label: "Recursos", href: "#recursos" },
+  { label: "Casos de Uso", href: "#casos-de-uso" },
   { label: "Como Funciona", href: "#como-funciona" },
   { label: "Planos", href: "#planos" },
   { label: "Dúvidas", href: "#faq" },
@@ -55,10 +55,10 @@ export default function Navbar() {
               </a>
             ))}
             <a
-              href="#planos"
-              className="btn-press inline-flex items-center px-5 py-2.5 rounded-lg bg-primary text-primary-foreground text-sm font-medium hover:bg-primary-light transition-colors"
+              href="https://app.controlladoria.com.br/register"
+              className="btn-press inline-flex items-center px-5 py-2.5 rounded-lg bg-primary text-primary-foreground text-sm font-medium hover:bg-primary-light transition-colors shadow-sm"
             >
-              Teste Grátis
+              Começar Grátis
             </a>
           </div>
 

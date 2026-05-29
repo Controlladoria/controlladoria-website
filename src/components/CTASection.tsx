@@ -17,7 +17,7 @@ export default function CTASection() {
         </p>
         <div className="animate-on-scroll stagger-2 flex flex-col sm:flex-row gap-4 justify-center">
           <a
-            href="#planos"
+            href="https://app.controlladoria.com.br/register"
             className="btn-press inline-flex items-center justify-center px-8 py-4 rounded-xl bg-primary text-primary-foreground font-semibold text-base hover:bg-primary-light transition-colors glow-primary"
           >
             Comece seu teste grátis

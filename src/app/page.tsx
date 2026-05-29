@@ -4,6 +4,7 @@ import { useScrollAnimation } from "@/components/useScrollAnimation";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Features from "@/components/Features";
+import UseCases from "@/components/UseCases";
 import HowItWorks from "@/components/HowItWorks";
 import Pricing from "@/components/Pricing";
 import FAQ from "@/components/FAQ";
@@ -51,6 +52,7 @@ export default function Home() {
         <Hero />
         <SocialProof />
         <Features />
+        <UseCases />
         <HowItWorks />
         <Pricing />
         <FAQ />

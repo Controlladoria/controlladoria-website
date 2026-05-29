@@ -105,7 +105,7 @@ export default function UseCases() {
               {active.description}
             </p>
             <a
-              href="#planos"
+              href="https://app.controlladoria.com.br/register"
               className="btn-press inline-flex items-center px-6 py-3 rounded-lg bg-primary text-primary-foreground font-medium hover:bg-primary-light transition-colors"
             >
               Experimentar Grátis

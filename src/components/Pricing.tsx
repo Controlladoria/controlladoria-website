@@ -16,6 +16,7 @@ const PLANS = [
     saving: 50,
     highlighted: false,
     cta: "Começar Grátis",
+    ctaHref: "https://app.controlladoria.com.br/register",
     features: [
       "Upload ilimitado de imagens, PDFs e XMLs",
       "IA avançada para extração de dados",
@@ -33,6 +34,7 @@ const PLANS = [
     highlighted: true,
     badge: "Mais Popular",
     cta: "Começar Grátis",
+    ctaHref: "https://app.controlladoria.com.br/register",
     features: [
       "Tudo do Visão +",
       "Gestão de equipe e permissões",
@@ -48,6 +50,7 @@ const PLANS = [
     saving: null,
     highlighted: false,
     cta: "Falar com Vendas",
+    ctaHref: "/contato",
     features: [
       "Tudo do Direção +",
       "Suporte dedicado",
@@ -139,7 +142,7 @@ export default function Pricing() {
 
               {/* CTA */}
               <a
-                href="#"
+                href={plan.ctaHref}
                 className={`btn-press block text-center px-6 py-3 rounded-xl font-semibold text-sm transition-all mb-8 ${
                   plan.highlighted
                     ? "bg-primary text-primary-foreground hover:bg-primary-light glow-primary"

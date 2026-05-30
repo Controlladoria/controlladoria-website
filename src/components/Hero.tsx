@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import InteractiveDemo from "@/components/InteractiveDemo";
 
 // ── Animated counter ──────────────────────────────────────────────────────────
 function useCountUp(target: number, suffix: string = "", duration = 1400) {
@@ -40,15 +41,6 @@ const STATS = [
   { target: 15, suffix: "", label: "Dias grátis" },
 ];
 
-const CHART_HEIGHTS = [40, 55, 45, 60, 70, 65, 80, 75, 90, 85, 95, 100];
-
-const INDICATORS = [
-  { label: "Margem EBITDA", value: "28.4%", up: true },
-  { label: "Margem Líquida", value: "12.1%", up: true },
-  { label: "ROI", value: "8.3%", up: true },
-  { label: "Liquidez Corrente", value: "1.82", up: false },
-];
-
 // ── Stat counter widget ───────────────────────────────────────────────────────
 function StatCounter({ target, suffix, label }: { target: number; suffix: string; label: string }) {
   const { display, ref } = useCountUp(target, suffix);
@@ -56,52 +48,6 @@ function StatCounter({ target, suffix, label }: { target: number; suffix: string
     <div ref={ref} className="text-center">
       <div className="text-3xl sm:text-4xl font-bold gradient-text-accent">{display}</div>
       <div className="text-sm text-muted-foreground mt-1">{label}</div>
-    </div>
-  );
-}
-
-// ── Chart with animated bars ──────────────────────────────────────────────────
-function AnimatedChart() {
-  const [ready, setReady] = useState(false);
-  const ref = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          observer.disconnect();
-          // slight delay so the card is fully visible first
-          setTimeout(() => setReady(true), 120);
-        }
-      },
-      { threshold: 0.4 }
-    );
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, []);
-
-  return (
-    <div ref={ref} className="bg-muted rounded-xl p-4 border border-border">
-      <div className="flex justify-between items-center mb-4">
-        <span className="text-sm font-medium">DRE Gerencial — Últimos 12 meses</span>
-        <span className="text-xs text-muted-foreground">2024</span>
-      </div>
-      <div className="flex items-end gap-2 h-32">
-        {CHART_HEIGHTS.map((h, i) => (
-          <div
-            key={i}
-            className="flex-1 rounded-t-sm"
-            style={{
-              height: ready ? `${h}%` : "2px",
-              transition: `height 0.7s cubic-bezier(0.22,1,0.36,1) ${i * 45}ms`,
-              background: `linear-gradient(to top, var(--primary), var(--primary-light))`,
-              opacity: 0.55 + (i / CHART_HEIGHTS.length) * 0.45,
-            }}
-          />
-        ))}
-      </div>
     </div>
   );
 }
@@ -161,68 +107,9 @@ export default function Hero() {
             ))}
           </div>
 
-          {/* Product mockup */}
+          {/* Interactive product demo */}
           <div className="animate-on-scroll stagger-5 relative mx-auto max-w-5xl">
-            <div className="glow-primary-strong rounded-2xl overflow-hidden border border-border bg-card">
-              {/* Browser chrome */}
-              <div className="flex items-center gap-2 px-4 py-3 bg-muted border-b border-border">
-                <div className="w-3 h-3 rounded-full bg-red-500/60" />
-                <div className="w-3 h-3 rounded-full bg-yellow-500/60" />
-                <div className="w-3 h-3 rounded-full bg-green-500/60" />
-                <div className="flex-1 ml-4 h-6 bg-background rounded-md flex items-center px-3">
-                  <span className="text-xs text-muted-foreground">app.controlladoria.com.br</span>
-                </div>
-              </div>
-
-              {/* Mock dashboard */}
-              <div className="p-6 lg:p-8 bg-card">
-                {/* KPI cards */}
-                <div className="grid grid-cols-3 gap-4 mb-4">
-                  {[
-                    { label: "Receita Bruta", value: "R$ 1.284.500", change: "+12.3%" },
-                    { label: "Lucro Líquido", value: "R$ 342.100", change: "+8.7%" },
-                    { label: "Margem EBITDA", value: "28.4%", change: "+2.1pp" },
-                  ].map((card) => (
-                    <div key={card.label} className="bg-muted rounded-xl p-4 border border-border">
-                      <div className="text-xs font-medium mb-1" style={{ color: "var(--primary)" }}>
-                        {card.label}
-                      </div>
-                      <div className="text-lg font-bold text-foreground">{card.value}</div>
-                      <div className="text-xs text-green-600 mt-1">{card.change}</div>
-                    </div>
-                  ))}
-                </div>
-
-                {/* Animated DRE chart */}
-                <div className="mb-4">
-                  <AnimatedChart />
-                </div>
-
-                {/* Indicadores Gerenciais row */}
-                <div className="bg-muted rounded-xl p-4 border border-border">
-                  <div className="flex items-center justify-between mb-3">
-                    <span className="text-sm font-medium flex items-center gap-2">
-                      <span className="w-2 h-2 rounded-full bg-primary inline-block" />
-                      Indicadores Gerenciais
-                    </span>
-                    <span className="text-xs px-2 py-0.5 bg-primary/10 text-primary rounded-full font-medium">
-                      Automático
-                    </span>
-                  </div>
-                  <div className="grid grid-cols-4 gap-3">
-                    {INDICATORS.map((ind) => (
-                      <div key={ind.label} className="bg-background rounded-lg p-3 border border-border text-center">
-                        <div className="text-xs text-muted-foreground mb-1 truncate">{ind.label}</div>
-                        <div className="text-base font-bold text-foreground">{ind.value}</div>
-                        <div className={`text-xs mt-0.5 ${ind.up ? "text-green-600" : "text-blue-500"}`}>
-                          {ind.up ? "▲" : "●"} ok
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
+            <InteractiveDemo />
           </div>
         </div>
       </div>

@@ -61,8 +61,8 @@ function DashboardScreen({ trigger }: { trigger: boolean }) {
         </div>
         <MiniChart trigger={trigger} />
         <div className="flex justify-between mt-1">
-          {MONTHS.map((m) => (
-            <span key={m} className="text-[8px] text-gray-400 flex-1 text-center">{m}</span>
+          {MONTHS.map((m, i) => (
+            <span key={i} className="text-[8px] text-gray-400 flex-1 text-center">{m}</span>
           ))}
         </div>
       </div>

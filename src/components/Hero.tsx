@@ -107,9 +107,17 @@ export default function Hero() {
             ))}
           </div>
 
-          {/* Interactive product demo */}
+          {/* Interactive product demo inside a monitor mockup */}
           <div className="animate-on-scroll stagger-5 relative mx-auto max-w-5xl">
-            <InteractiveDemo />
+            {/* Monitor body / bezel */}
+            <div className="rounded-2xl sm:rounded-[20px] bg-gradient-to-b from-zinc-700 to-zinc-900 p-2 sm:p-3 shadow-2xl ring-1 ring-white/10">
+              <InteractiveDemo />
+            </div>
+            {/* Stand neck + base */}
+            <div className="flex flex-col items-center" aria-hidden="true">
+              <div className="h-5 sm:h-6 w-20 sm:w-28 bg-gradient-to-b from-zinc-700 to-zinc-800" />
+              <div className="h-2.5 w-36 sm:w-48 rounded-b-xl bg-zinc-800 shadow-md" />
+            </div>
           </div>
         </div>
       </div>

@@ -41,7 +41,7 @@ export const translations = {
     },
     howItWorks: {
       title: "Como funciona",
-      subtitle: "Em três passos simples, transforme documentos financeiros em relatórios gerenciais completos.",
+      subtitle: "Mande suas notas e extratos. Em minutos, a ControlladorIA te mostra quanto entrou, quanto saiu e quanto sobrou de verdade: sem planilha, sem achismo, sem esperar o contador.",
       step1Title: "Envie seus documentos",
       step1Desc: "Mande tudo: PDFs, extratos, notas fiscais, fotos de recibos. Simples assim.",
       step2Title: "IA processa e classifica",
@@ -91,7 +91,7 @@ export const translations = {
     },
     howItWorks: {
       title: "How it works",
-      subtitle: "In three simple steps, turn financial documents into complete management reports.",
+      subtitle: "Send your invoices and bank statements. In minutes, ControlladorIA shows you what came in, what went out, and what's really left: no spreadsheets, no guesswork, no waiting on your accountant.",
       step1Title: "Upload your documents",
       step1Desc: "Send everything: PDFs, bank statements, invoices, receipt photos. Simple as that.",
       step2Title: "AI processes and categorizes",
@@ -141,7 +141,7 @@ export const translations = {
     },
     howItWorks: {
       title: "Cómo funciona",
-      subtitle: "En tres sencillos pasos, transforma documentos financieros en informes de gestión completos.",
+      subtitle: "Envía tus facturas y extractos. En minutos, ControlladorIA te muestra cuánto entró, cuánto salió y cuánto sobró de verdad: sin hojas de cálculo, sin suposiciones, sin esperar al contador.",
       step1Title: "Sube tus documentos",
       step1Desc: "Envía todo: PDFs, extractos bancarios, facturas, fotos de recibos. Así de simple.",
       step2Title: "La IA procesa y clasifica",

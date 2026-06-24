@@ -6,6 +6,7 @@ import Hero from "@/components/Hero";
 import Features from "@/components/Features";
 import WhyUs from "@/components/WhyUs";
 import UseCases from "@/components/UseCases";
+import Security from "@/components/Security";
 import HowItWorks from "@/components/HowItWorks";
 import Pricing from "@/components/Pricing";
 import FAQ from "@/components/FAQ";
@@ -52,9 +53,10 @@ export default function Home() {
       <main>
         <Hero />
         <SocialProof />
+        <UseCases />
         <WhyUs />
         <Features />
-        <UseCases />
+        <Security />
         <HowItWorks />
         <Pricing />
         <FAQ />

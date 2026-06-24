@@ -10,6 +10,8 @@ const PLANS = [
   {
     name: "Visão",
     subtitle: "Você quer entender onde está seu dinheiro. Este plano é perfeito para começar.",
+    audience: "Para quem quer finalmente entender se o mês fechou no lucro.",
+    idealFor: "Pequenos negócios, freelancers, MEIs",
     originalPrice: 149,
     price: 99,
     users: "1 usuário",
@@ -27,6 +29,8 @@ const PLANS = [
   {
     name: "Direção",
     subtitle: "Você já sabe que precisa crescer. Este plano dá a direção e segurança para fazer isso.",
+    audience: "Para quem quer controlar o negócio e tomar decisões com dados.",
+    idealFor: "Pequenas e médias empresas",
     originalPrice: 499,
     price: 399,
     users: "Até 5 usuários",
@@ -44,6 +48,8 @@ const PLANS = [
   {
     name: "Expansão",
     subtitle: "Você está escalando e precisa de um parceiro robusto. Somos nós.",
+    audience: "Para quem está escalando e precisa de um parceiro robusto.",
+    idealFor: "Médias e grandes empresas, Escritórios Contábeis",
     originalPrice: null,
     price: null,
     users: "Usuários ilimitados",
@@ -72,9 +78,6 @@ export default function Pricing() {
             Comece agora e conheça a{" "}
             <span className="gradient-text">ControlladorIA na prática</span>
           </h2>
-          <p className="animate-on-scroll stagger-1 text-lg text-muted-foreground max-w-2xl mx-auto">
-            Se você quer tomar decisões com mais clareza, o próximo passo é simples:
-          </p>
         </div>
 
         {/* Cards */}
@@ -96,9 +99,20 @@ export default function Pricing() {
               )}
 
               {/* Plan name */}
-              <div className="mb-6">
+              <div className="mb-4">
                 <h3 className="text-xl font-bold mb-1">{plan.name}</h3>
                 <p className="text-sm text-muted-foreground">{plan.subtitle}</p>
+              </div>
+
+              {/* Audience targeting */}
+              <div className="mb-6 rounded-xl bg-primary/[0.06] border border-primary/15 p-4">
+                <p className="text-sm font-semibold text-foreground leading-snug">
+                  {plan.audience}
+                </p>
+                <p className="text-xs text-muted-foreground mt-2">
+                  <span className="font-medium text-foreground/80">Ideal para:</span>{" "}
+                  {plan.idealFor}
+                </p>
               </div>
 
               {/* Price */}

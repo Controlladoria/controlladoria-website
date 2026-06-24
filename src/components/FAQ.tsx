@@ -16,6 +16,10 @@ const QUESTIONS = [
     a: "Não. Ela faz o oposto: libera seu tempo de tarefas operacionais para você focar em decisões estratégicas. A IA organiza os dados; você interpreta o significado. Quanto melhor sua liderança, melhor você usa a ControlladorIA.",
   },
   {
+    q: "E meu contador? Isso substitui o contador?",
+    a: "Não. A ControlladorIA complementa o contador, não substitui. Enquanto seu contador cuida das obrigações fiscais e conformidade, a ControlladorIA te dá inteligência para tomar decisões. Você entende seus números em tempo real, sem depender de terceiros para saber como está o negócio. Muitos contadores já usam a ControlladorIA para seus clientes — libera o contador do trabalho manual e deixa espaço para o estratégico.",
+  },
+  {
     q: "O que eu ganho com isso, na prática?",
     a: "Depende de onde você está. Se está começando: finalmente sabe onde está seu dinheiro. Se está crescendo: toma decisões 10x mais rápido. Se é contador: entrega relatórios que seus clientes realmente entendem e usam. O ganho comum: você para de adivinhar e começa a escolher.",
   },
@@ -45,7 +49,7 @@ export default function FAQ() {
             Tá com dúvida? <span className="gradient-text">A gente explica.</span>
           </h2>
           <p className="animate-on-scroll stagger-1 text-lg text-muted-foreground">
-            As 7 perguntas mais feitas por quem quer finalmente entender seus números.
+            As perguntas mais feitas por quem quer finalmente entender seus números.
           </p>
         </div>
 

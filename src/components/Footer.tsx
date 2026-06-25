@@ -29,11 +29,11 @@ export default function Footer() {
           {/* Brand */}
           <div className="col-span-2 md:col-span-1">
             <Image
-              src="/logo.svg"
+              src="/logo-horizontal.svg"
               alt="ControlladorIA"
-              width={200}
-              height={44}
-              className="h-10 w-auto mb-4"
+              width={246}
+              height={80}
+              className="h-12 w-auto mb-4"
             />
             <p className="text-sm text-muted-foreground leading-relaxed mb-4">
               Decisões Inteligentes.

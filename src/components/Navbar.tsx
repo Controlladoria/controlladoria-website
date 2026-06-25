@@ -39,15 +39,15 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 lg:h-20">
+        <div className="flex items-center justify-between h-20 lg:h-28">
           {/* Logo */}
           <a href="#" className="flex items-center gap-2 shrink-0">
             <Image
               src="/logo-horizontal.svg"
               alt="ControlladorIA"
-              width={252}
-              height={56}
-              className="h-11 lg:h-14 w-auto"
+              width={246}
+              height={80}
+              className="h-14 lg:h-20 w-auto"
               priority
             />
           </a>

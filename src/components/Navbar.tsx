@@ -45,9 +45,9 @@ export default function Navbar() {
             <Image
               src="/logo-horizontal.svg"
               alt="ControlladorIA"
-              width={180}
-              height={40}
-              className="h-8 lg:h-10 w-auto"
+              width={252}
+              height={56}
+              className="h-11 lg:h-14 w-auto"
               priority
             />
           </a>

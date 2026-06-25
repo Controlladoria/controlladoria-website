@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import { useLanguage } from "@/contexts/LanguageContext";
 import InteractiveDemo from "@/components/InteractiveDemo";
 
@@ -117,6 +118,23 @@ export default function Hero() {
             <div className="flex flex-col items-center" aria-hidden="true">
               <div className="h-5 sm:h-6 w-20 sm:w-28 bg-gradient-to-b from-zinc-700 to-zinc-800" />
               <div className="h-2.5 w-36 sm:w-48 rounded-b-xl bg-zinc-800 shadow-md" />
+            </div>
+
+            {/* Phone mockup overlapping the bottom-right corner */}
+            <div className="hidden sm:block absolute -bottom-4 -right-2 lg:-right-6 w-[118px] lg:w-[150px] z-10">
+              <div className="rounded-[1.7rem] bg-gradient-to-b from-zinc-700 to-zinc-900 p-1.5 shadow-2xl ring-1 ring-white/10">
+                <div className="relative rounded-[1.3rem] overflow-hidden bg-black">
+                  {/* Notch */}
+                  <div className="absolute top-1.5 left-1/2 -translate-x-1/2 w-10 h-1.5 rounded-full bg-black/70 z-10" />
+                  <Image
+                    src="/mobilecontrolladoria.png"
+                    alt="ControlladorIA no celular"
+                    width={429}
+                    height={927}
+                    className="w-full h-auto"
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>

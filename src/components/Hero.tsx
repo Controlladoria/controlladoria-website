@@ -73,8 +73,13 @@ export default function Hero() {
           </h1>
 
           {/* Subtitle */}
-          <p className="animate-on-scroll stagger-1 text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed">
+          <p className="animate-on-scroll stagger-1 text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto mb-6 leading-relaxed">
             {t("hero.subtitle")}
+          </p>
+
+          {/* Tagline lead-in */}
+          <p className="animate-on-scroll stagger-1 text-base sm:text-lg font-semibold gradient-text-accent mb-8">
+            {t("hero.tagline")}
           </p>
 
           {/* CTAs */}

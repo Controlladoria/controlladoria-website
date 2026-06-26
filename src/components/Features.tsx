@@ -67,7 +67,7 @@ export default function Features() {
             Tudo que sua <span className="gradient-text">controladoria</span> precisa
           </h2>
           <p className="animate-on-scroll stagger-1 text-lg text-muted-foreground max-w-2xl mx-auto">
-            DRE Gerencial, Balanço Gerencial, Fluxo de Caixa e Indicadores — gerados automaticamente, sem contador terceirizado.
+            DRE Gerencial, Balanço Gerencial, Fluxo de Caixa e Indicadores — gerados automaticamente, sem depender de terceiros.
           </p>
         </div>
 

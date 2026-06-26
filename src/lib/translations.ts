@@ -28,7 +28,7 @@ export const translations = {
         "Planilhas desatualizadas e propensas a erros",
         "Horas de trabalho manual todo mês",
         "Decisões baseadas em achismo",
-        "Contador terceirizado para tudo",
+        "Dependência de terceiros para entender seus números",
         "Relatórios atrasados, sempre",
       ],
       newItems: [
@@ -79,7 +79,7 @@ export const translations = {
         "Outdated spreadsheets prone to errors",
         "Hours of manual work every month",
         "Decisions based on guesswork",
-        "Outsourced accountant for everything",
+        "Dependence on third parties to understand your numbers",
         "Reports always late",
       ],
       newItems: [
@@ -130,7 +130,7 @@ export const translations = {
         "Hojas de cálculo desactualizadas y propensas a errores",
         "Horas de trabajo manual cada mes",
         "Decisiones basadas en suposiciones",
-        "Contador externo para todo",
+        "Dependencia de terceros para entender tus números",
         "Informes siempre atrasados",
       ],
       newItems: [

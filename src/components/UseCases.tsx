@@ -8,7 +8,7 @@ const TABS = [
     label: "Pequenos Negócios",
     title: "Feito para o seu pequeno negócio",
     description:
-      "Padaria, salão, loja de bairro, food truck — não importa. Você manda as notas e extratos, a ControlladorIA te diz quanto entrou, quanto saiu e se você está ganhando dinheiro de verdade. Sem planilha, sem contador, sem dor de cabeça.",
+      "Padaria, salão, loja de bairro, food truck — não importa. Você manda as notas e extratos, a ControlladorIA te diz quanto entrou, quanto saiu e se você está ganhando dinheiro de verdade. Sem planilha, sem depender de terceiros, sem dor de cabeça.",
     preview: [
       { role: "user", text: "Mandei os extratos e notas de Março. Ganhei dinheiro esse mês?" },
       { role: "ai", text: "Sim! Março fechou positivo. Receita: R$ 18.400. Custos e despesas: R$ 12.900. Lucro do mês: R$ 5.500 (margem de 29.9%). Seu melhor mês desde Outubro." },

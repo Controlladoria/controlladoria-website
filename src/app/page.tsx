@@ -53,8 +53,8 @@ export default function Home() {
       <main>
         <Hero />
         <SocialProof />
-        <UseCases />
         <WhyUs />
+        <UseCases />
         <Features />
         <Security />
         <HowItWorks />

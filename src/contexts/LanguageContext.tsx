@@ -35,7 +35,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     const stored = localStorage.getItem("controlladoria-lang") as Language | null;
-    if (stored && (stored === "pt" || stored === "en" || stored === "es")) {
+    if (stored && (stored === "pt" || stored === "en")) {
       setLangState(stored);
     }
   }, []);

@@ -8,7 +8,6 @@ import type { Language } from "@/lib/translations";
 const LANG_OPTIONS: { code: Language; label: string; flag: string }[] = [
   { code: "pt", label: "PT-BR", flag: "🇧🇷" },
   { code: "en", label: "EN", flag: "🇺🇸" },
-  { code: "es", label: "ES", flag: "🇪🇸" },
 ];
 
 export default function Navbar() {

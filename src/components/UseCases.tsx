@@ -6,7 +6,7 @@ const TABS = [
   {
     id: "pequenos",
     label: "Pequenos Negócios",
-    title: "Finalmente saber se o mês fechou no lucro",
+    title: "Feito para o seu pequeno negócio",
     description:
       "Padaria, salão, loja de bairro, food truck — não importa. Você manda as notas e extratos, a ControlladorIA te diz quanto entrou, quanto saiu e se você está ganhando dinheiro de verdade. Sem planilha, sem contador, sem dor de cabeça.",
     preview: [
@@ -69,7 +69,7 @@ export default function UseCases() {
         {/* Header */}
         <div className="text-center mb-12">
           <h2 className="animate-on-scroll text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
-            Feito para <span className="gradient-text">seu negócio</span>
+            Finalmente saber se o mês fechou <span className="gradient-text">no lucro</span>
           </h2>
           <p className="animate-on-scroll stagger-1 text-lg text-muted-foreground max-w-2xl mx-auto">
             Independente do tamanho ou segmento da sua empresa, a ControlladorIA

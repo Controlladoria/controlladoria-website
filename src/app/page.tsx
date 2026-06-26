@@ -54,8 +54,8 @@ export default function Home() {
         <Hero />
         <SocialProof />
         <WhyUs />
-        <UseCases />
         <Features />
+        <UseCases />
         <Security />
         <HowItWorks />
         <Pricing />

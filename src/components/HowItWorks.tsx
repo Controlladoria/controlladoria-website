@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function HowItWorks() {
@@ -49,6 +50,20 @@ export default function HowItWorks() {
           <p className="animate-on-scroll stagger-1 text-lg text-muted-foreground max-w-2xl mx-auto">
             {t("howItWorks.subtitle")}
           </p>
+        </div>
+
+        {/* Photo banner */}
+        <div className="animate-on-scroll stagger-2 mb-16 max-w-4xl mx-auto">
+          <div className="relative rounded-2xl overflow-hidden shadow-2xl ring-1 ring-border">
+            <Image
+              src="/photo_guy_takingpic.png"
+              alt="Empreendedor fotografando uma nota fiscal com o celular para enviar à ControlladorIA"
+              width={3600}
+              height={2025}
+              className="w-full h-auto object-cover"
+              sizes="(max-width: 768px) 100vw, 896px"
+            />
+          </div>
         </div>
 
         {/* 3-column cards */}

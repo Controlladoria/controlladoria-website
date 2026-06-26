@@ -9,8 +9,8 @@ export default function CTASection() {
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative text-center">
         <h2 className="animate-on-scroll text-3xl sm:text-4xl lg:text-6xl font-bold mb-6 leading-tight">
-          Pronto para descobrir como seus números podem{" "}
-          <span className="gradient-text">guiar seu negócio?</span>
+          Cansado de fechar o mês no escuro?{" "}
+          <span className="gradient-text">Comece a enxergar seu lucro hoje mesmo.</span>
         </h2>
         <p className="animate-on-scroll stagger-1 text-lg text-muted-foreground max-w-2xl mx-auto mb-10">
           15 dias grátis. Sem cartão. Sem surpresa.
@@ -20,7 +20,7 @@ export default function CTASection() {
             href="https://app.controlladoria.com.br/register"
             className="btn-press inline-flex items-center justify-center px-8 py-4 rounded-xl bg-primary text-primary-foreground font-semibold text-base hover:bg-primary-light transition-colors glow-primary"
           >
-            Começar Grátis
+            Ver meus números agora
             <svg
               className="ml-2 w-4 h-4"
               fill="none"
